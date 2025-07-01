@@ -1,157 +1,138 @@
+````markdown
 # FinanceApp (Personal Finance Tracker)
 
-A full-stack web application for managing personal finances.
-Users can register/login, track income and expenses, categorize transactions, view summaries and visualizations (pie chart), and export transactions history to PDF. A responsive design with light/dark theme support ensures usability across devices.
+A full-stack web application for managing personal finances.  
+Users can register/login, track income and expenses, categorize transactions, view summaries and visualizations (pie chart), and export their transaction history to PDF. A responsive design with light/dark theme support ensures usability across devices.
 
 ## 📚 Table of Contents
 
-* [Features](#features)
-* [Tech Stack](#tech-stack)
-* [Getting Started](#getting-started)
-
-  * [Prerequisites](#prerequisites)
-  * [Backend Setup](#backend-setup)
-  * [Frontend Setup](#frontend-setup)
-  * [Environment Variables](#environment-variables)
-* [Folder Structure](#folder-structures)
-* [Usage](#usage)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Backend Setup](#backend-setup)
+  - [Frontend Setup](#frontend-setup)
+  - [Environment Variables](#environment-variables)
+- [Folder Structure](#folder-structures)
+- [Usage](#usage)
 
 ## 🧩 Features
-
-* #### User Authentication
-
-  * Register and login with email/password (JWT-based).
-  * Password strength enforcement ( min 8 chars, uppercase, lowercase, digit, special).
-* #### Transaction Management
-
-  * Add income or expense transactions.
-  * Only expenses require a category.
-  * Edit and delete transactiosn.
-  * Filter and search by date range, type, and category.
-* #### Category Management
-
-  * create, update, and delete expense categories ( with optional monthly budget).
-  * Prevent duplicate category names per user.
-* #### Dashboard and Summaries
-
-  * Displays total income, total expense, and current balance.
-  * Responsive table showing all transactions.
-* #### Visiual Reports
-
-  * Monthly expences breakdown pie chart by category.
-  * Percentages displayed inside chart slices.
-  * Custom legend beneath the chart.
-* #### Export to PDF
-
-  * Download current (filtered) transaction list as a styled PDF table (jsPDF + AutoTable).
-* #### Responsive Design & Theming
-
-  * Mobile-friendely layout.
-  * Light/Dark mode toggle (CSS variables).
-  * Clean, modern UI using CSS customm properties.
+- #### User Authentication
+  - Register and login with email/password (JWT-based).
+  - Password strength enforcement (min 8 chars, uppercase, lowercase, digit, special).
+- #### Transaction Management
+  - Add income or expense transactions.
+  - Only expenses require a category.
+  - Edit and delete transactions.
+  - Filter and search by date range, type, and category.
+- #### Category Management
+  - Create, update, and delete expense categories (with optional monthly budget).
+  - Prevent duplicate category names per user.
+- #### Dashboard and Summaries
+  - Displays total income, total expense, and current balance.
+  - Responsive table showing all transactions.
+- #### Visual Reports
+  - Monthly expenses breakdown pie chart by category.
+  - Percentages displayed inside chart slices.
+  - Custom legend beneath the chart.
+- #### Export to PDF
+  - Download current (filtered) transaction list as a styled PDF table (jsPDF + AutoTable).
+- #### Responsive Design & Theming
+  - Mobile-friendly layout.
+  - Light/Dark mode toggle (CSS variables).
+  - Clean, modern UI using CSS custom properties.
 
 ## 🛠 Tech Stack
-
-* #### Backend
-
-  * Node.js, Express
-  * MongoDB (Mongoose ORM)
-  * JSON Web Tokens (JWT) for Authentication
-  * Bcrypt for password hashing
-* #### Frontend
-
-  * React (Create React App)
-  * React Router v6
-  * Axios for API calls
-  * Recharts for pie chart
-  * jsPDF & jspdf-autotable for PDF export
-  * CSS3 (with custom variables for theming)
+- #### Backend
+  - Node.js, Express
+  - MongoDB (Mongoose ORM)
+  - JSON Web Tokens (JWT) for authentication
+  - Bcrypt for password hashing
+- #### Frontend
+  - React (Create React App)
+  - React Router v6
+  - Axios for API calls
+  - Recharts for pie chart
+  - jsPDF & jspdf-autotable for PDF export
+  - CSS3 (with custom variables for theming)
 
 ## 🚀 Getting Started
 
 ### 📦 Prerequisites
-
-* Node.js >= 14 LTS
-* npm (or Yarn)
-* MongoDB (running locally or a cload URI)
+- Node.js ≥ 14 LTS
+- npm (or Yarn)
+- MongoDB (running locally or a cloud URI)
 
 Clone the repository and follow the steps below:
 
 ```bash
 git clone https://github.com/sania2000/finance-tracker
 cd finance-tracker
-```
+````
 
 ### 🧪 Backend Setup
 
-1. Navigate to the backend/ directory
+1. Navigate to the **backend/** directory
 
-```bash
-cd backend
-```
-
+   ```bash
+   cd backend
+   ```
 2. Install dependencies
 
-```bash
-npm install
-```
+   ```bash
+   npm install
+   ```
+3. Create a `.env` file in **backend/** with the variables shown under [Environment Variables](#environment-variables). Example:
 
-3. Create a .env file in backend/ with these variables (see [Environment Variables](#environment-variables) below). For example:
-
-```bash
-MONGODB_URI=mongodb://localhost:27017/finance
-JWT_SECRET=your_jwt_secret_here
-```
-
+   ```bash
+   MONGODB_URI=mongodb://localhost:27017/finance
+   JWT_SECRET=your_jwt_secret_here
+   ```
 4. Start the server:
 
-```bash
-npm start
-```
+   ```bash
+   npm start
+   ```
 
-The backend runs on port 5000 by default.
-You should see:
+   The backend runs on **port 5000** by default and you should see:
 
-```
-MongoDB connected
-Server running on port 5000
-```
+   ```
+   MongoDB connected
+   Server running on port 5000
+   ```
 
 ### 🎨 Frontend Setup
 
-1. In a new terminal, navigate to the frontend/ folder:
+1. In a new terminal, navigate to the **frontend/** folder:
 
-```bash
-cd ../frontend
-```
-
+   ```bash
+   cd ../frontend
+   ```
 2. Install dependencies
 
-```bash
-npm install
-```
+   ```bash
+   npm install
+   ```
+3. Create a `.env` file in **frontend/** with:
 
-3. Create .env file in frontend/ with:
-
-```
-REACT_APP_API_URL=http://localhost:5000
-```
-
+   ```
+   REACT_APP_API_URL=http://localhost:5000
+   ```
 4. Start the React development server:
 
-```bash
-npm start
-```
+   ```bash
+   npm start
+   ```
 
-The default runs on [http://localhost:3000/](http://localhost:3000/) by default.
+   The app runs on **[http://localhost:3000/](http://localhost:3000/)** by default.
 
 ### 🔐 Environment Variables
 
-#### Backend (backend/.env)
+#### Backend (`backend/.env`)
 
 ```env
-MONGODB_URI= #Your_database_library_URI
-JWT_SECRET= #Any_strong_random_string
+MONGODB_URI= # Your database connection string
+JWT_SECRET=  # Any strong random string
 ```
 
 ## 🗂 Folder Structures
@@ -160,7 +141,7 @@ JWT_SECRET= #Any_strong_random_string
 finance-tracker/
 ├── backend/
 │   ├── middleware/
-│   │   └── authmiddleware.js
+│   │   └── authMiddleware.js
 │   ├── models/
 │   │   ├── Category.js
 │   │   ├── Transaction.js
@@ -183,7 +164,7 @@ finance-tracker/
 │   │   │   ├── NavBar.jsx
 │   │   │   └── PrivateRoute.jsx
 │   │   ├── pages/
-│   │   │   ├── AddTransaction.js
+│   │   │   ├── AddTransaction.jsx
 │   │   │   ├── Categories.jsx
 │   │   │   ├── Dashboard.jsx
 │   │   │   ├── Login.jsx
@@ -202,37 +183,35 @@ finance-tracker/
 
 ## 🧪 Usage
 
-1. #### Register a new user or Login if you already have an account.
-2. #### On the dashboard you'll see:
+1. **Register** a new user or **log in** if you already have an account.
+2. On the **Dashboard** you’ll see:
 
-* Total income, Total expense, and Balance cards.
-* A transaction table with columns (Date, Type, Category, Amount, Description, Actions).
-* Filter button to expand filters (by category, type, date range).
-* "Export as PDF" button to download the current table view.
-* "Add Transaction: and "Manage Categories" links.
+   * Total income, total expense, and balance cards.
+   * A transaction table (Date, Type, Category, Amount, Description, Actions).
+   * A **Filter** button to refine by category, type, or date range.
+   * **Export as PDF** to download the current table view.
+   * **Add Transaction** and **Manage Categories** links.
+3. **Add Transaction**:
 
-3. #### Add Transaction:
+   * Enter amount, select **Income** or **Expense**.
+   * If **Expense**, choose a category.
+   * Pick date and optional description.
+   * Click **Save**.
+4. **Manage Categories**:
 
-* Enter amount, select "Income" or "Expense".
-* If "Expense", choose a category.
-* Pick date and optional description.
-* Click "Save" to add it.
+   * Add new categories with an optional monthly budget.
+   * Edit or delete existing categories.
+5. **Pie Chart** (Reports):
 
-4. #### Manage Categories:
+   * Select a month (YYYY-MM).
+   * View a donut chart of expense distribution by category.
+   * Hover to see exact totals; percentages are shown on each slice.
+6. **Toggle Theme**:
 
-* Add new categories with an optional monthly budget.
-* Edit or delete existing categories.
+   * Click the moon/sun icon in the NavBar to switch light and dark modes.
+7. **Export PDF**:
 
-5. #### Pie Chart (Reports):
+   * On the Dashboard, click **Export as PDF** to download the formatted table currently displayed.
 
-* Select a month (YYY-MM)
-* View a donut chart of expense distribution by category for the month.
-* Hover on slices to see exact totals; percentages are displayed on each slice.
-
-6. #### Toggle Theme:
-
-* Click the moon/sun icon in the NavBar to switch ligh and dark modes.
-
-7. #### Export PDF:
-
-* On the Dashboard, click Export as PDF to download a formatted PDF currently visible.
+```
+```
